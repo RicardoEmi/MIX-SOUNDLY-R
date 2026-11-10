@@ -1,1 +1,302 @@
 
+/* VARIABLES PRINCIPALES */
+:root {
+    --color-fondo: #111827;
+    --color-principal: #7C3AED;
+    --color-secundario: #A78BFA;
+    --color-texto: #F9FAFB;
+    --color-tarjeta: #1F2937;
+    --color-borde: #374151;
+}
+
+/* CONFIGURACIÓN GENERAL */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+/* ENCABEZADO */
+header {
+    text-align: center;
+    padding: 35px 20px;
+    background-color: #0B1120;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+    color: var(--color-secundario);
+    letter-spacing: 2px;
+}
+
+/* MENÚ */
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 18px;
+    background-color: var(--color-tarjeta);
+}
+
+nav a {
+    color: var(--color-texto);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--color-secundario);
+}
+
+nav a.activo {
+    color: var(--color-secundario);
+}
+
+/* CONTENIDO PRINCIPAL */
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+section {
+    margin-block: 30px;
+    padding: 25px;
+    background-color: var(--color-tarjeta);
+    border: 1px solid var(--color-borde);
+    border-radius: 12px;
+}
+
+h2 {
+    color: var(--color-secundario);
+}
+
+/* BOTONES */
+.boton {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: var(--color-principal);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.boton:hover {
+    background-color: var(--color-secundario);
+    color: #111827;
+}
+
+/* CATEGORÍAS */
+.contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.card {
+    padding: 20px;
+    background-color: #273449;
+    border: 1px solid var(--color-borde);
+    border-radius: 10px;
+}
+
+.card h3 {
+    color: var(--color-secundario);
+}
+
+
+/* LISTA */
+.lista li {
+    margin-bottom: 10px;
+}
+
+/* PIE DE PÁGINA */
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #0B1120;
+    color: #D1D5DB;
+}
+
+/* ADAPTACIÓN A MÓVILES */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 27px;
+    }
+
+    .contenedor {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        padding: 10px;
+    }
+}
+
+
+
+/* CATÁLOGO DE PRODUCTOS */
+.contenedor-tarjetas {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.producto {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: var(--color-tarjeta);
+    border: 1px solid var(--color-borde);
+    border-radius: 10px;
+}
+
+.producto img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.producto h3 {
+    color: var(--color-secundario);
+}
+
+.producto .descripcion {
+    color: #D1D5DB;
+    flex-grow: 1;
+}
+
+.producto .precio {
+    color: #A3E635;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.producto a {
+    text-align: center;
+}
+
+/* CATEGORÍA DEL PRODUCTO */
+.producto .categoria {
+    color: var(--color-secundario);
+    font-size: 14px;
+    font-weight: bold;
+    margin: -3px;
+    text-align: left;
+}
+/* TABLET */
+@media (max-width: 900px) {
+    .contenedor-tarjetas {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* MÓVIL */
+@media (max-width: 600px) {
+    .contenedor-tarjetas {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* SELECTORES DE CLASE, ID Y AGRUPACIÓN */
+#bienvenida {
+    text-align: center;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+}
+
+/* SELECTORES COMBINADORES */
+section p {
+    text-align: justify;
+}
+
+section > h2 {
+    border-bottom: 2px solid var(--color-principal);
+    padding-bottom: 8px;
+}
+
+h2 ~ p {
+    color: #D1D5DB;
+}
+
+section h2 + p {
+    margin-top: 12px;
+}
+
+/* SELECTORES DE ATRIBUTOS */
+a[target] {
+    cursor: pointer;
+}
+
+.producto img[alt*="sintetizador"] {
+    border: 2px solid var(--color-principal);
+}
+
+/* PSEUDOCLASES */
+nav a:link {
+    text-decoration: none;
+}
+
+nav a:visited {
+    color: var(--color-secundario);
+}
+
+nav a:active {
+    color: white;
+}
+
+.lista li:first-child {
+    font-weight: bold;
+}
+
+.lista li:last-child {
+    color: var(--color-secundario);
+}
+
+.lista li:nth-child(odd) {
+    padding-left: 5px;
+}
+
+/* PSEUDOELEMENTOS */
+h2::first-letter {
+    font-size: 1.2em;
+}
+
+p::selection {
+    background-color: var(--color-principal);
+    color: white;
+}
+
+.lista li::marker {
+    color: var(--color-secundario);
+}
+
+footer p::after {
+    content: " | Catálogo digital";
+}
+
+
+/* IMÁGENES RESPONSIVAS */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* EVITAR DESBORDAMIENTOS */
+body {
+    overflow-x: hidden;
+}
